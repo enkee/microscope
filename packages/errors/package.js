@@ -1,8 +1,7 @@
 Package.describe({
   name: 'enkee:errors',
   summary: "A pattern to display application errors to the user",
-  version: '1.0.0',
-  documentation: 'README.md'
+  version: '1.0.0'
 });
 
 Package.onUse(function (api, where) {
@@ -17,8 +16,8 @@ Package.onUse(function (api, where) {
 });
 
 Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('enkee:errors');
-  api.addFiles('errors-tests.js');
+  api.use('enkee:errors', 'client');
+  api.use(['tinytest', 'test-helpers'], 'client');
+
+  api.addFiles('errors_tests.js', 'client');
 });
